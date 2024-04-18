@@ -1,6 +1,15 @@
 /**********************************************************************
   4WD_OffRoadRobot_ESP32_S2_PS2
 
+  硬件型号：主控板：ESP32 S2 MINI
+           电机驱动芯片：RZ7886
+           电源：聚合物锂电池2s
+           电机：GA25-370  21：1减速比
+  Hardware model: Main control board: ESP32 S2 MINI
+                  Motor driver chip: RZ7886
+                  Power supply: polymer lithium battery 2s
+                  Motor: GA25-370 21:1 reduction ratio
+
   控制说明：
   1.左摇杆前后控制小车前进后退，左右控制原地转向。
   2.右摇杆左右和左摇杆前后一起控制实现差速转向。
