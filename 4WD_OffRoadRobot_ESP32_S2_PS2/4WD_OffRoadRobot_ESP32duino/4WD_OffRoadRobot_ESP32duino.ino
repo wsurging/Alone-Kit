@@ -200,7 +200,7 @@ void loop() {
 
   // 左摇杆居中停止 Left joystick stops in the center
   if (PS2MID_LF <= ps2x.Analog(PSS_LY) && ps2x.Analog(PSS_LY) <= PS2MID_LB
-      && PS2MID_LL <= ps2x.Analog(PSS_LY) && ps2x.Analog(PSS_LY) <= PS2MID_LR) {
+      && PS2MID_LL <= ps2x.Analog(PSS_LX) && ps2x.Analog(PSS_LX) <= PS2MID_LR) {
     Stop();
   }
 

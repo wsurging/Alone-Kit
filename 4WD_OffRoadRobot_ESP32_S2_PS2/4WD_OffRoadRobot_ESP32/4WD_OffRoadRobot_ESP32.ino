@@ -156,7 +156,7 @@ void loop() {
     ledcWrite(PWM2A, map(ps2x.Analog(PSS_LX), PS2MIN, PS2MID_LL, MidSpeedL, 0));
     ledcWrite(PWM3A, map(ps2x.Analog(PSS_LX), PS2MIN, PS2MID_LL, MidSpeedL, 0));
     // Serial.println("LEFT");
-  } else if (PS2MAX >= ps2x.Analog(PSS_LX) && ps2x.Analog(PSS_LX) >= PS2MID_LR) {  // 右转 Right
+  } else if (PS2MAX >= ps2x.Analog(PSS_LX) && ps2x.Analog(PSS_LX) >= PS2MID_RR) {  // 右转 Right
     ledcWrite(PWM1A, LOW);
     ledcWrite(PWM4A, LOW);
     ledcWrite(PWM1B, map(ps2x.Analog(PSS_LX), PS2MID_LR, PS2MAX, 0, MidSpeedR));
@@ -227,7 +227,7 @@ void loop() {
 
   // 左摇杆居中停止 Left joystick stops in the center
   if (PS2MID_LF <= ps2x.Analog(PSS_LY) && ps2x.Analog(PSS_LY) <= PS2MID_LB
-      && PS2MID_LL <= ps2x.Analog(PSS_LY) && ps2x.Analog(PSS_LY) <= PS2MID_LR) {
+      && PS2MID_LL <= ps2x.Analog(PSS_LX) && ps2x.Analog(PSS_LX) <= PS2MID_LR) {
     Stop();
   }
 
