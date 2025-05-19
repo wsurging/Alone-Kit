@@ -24,9 +24,9 @@
 
   @Author: Wsurging
   @Version: V1.0
-  @Date: 04/16/2024
+  @Date: 04/2024
 **********************************************************************/
-#include <PS2X_lib.h>
+#include <PS2X_lib.h> // PS2库文件
 
 PS2X ps2x;
 
@@ -35,7 +35,7 @@ PS2X ps2x;
    设置PS2手柄接线端口，默认设置，不能更改
  *********************************************************************/
 #define PS2_DAT 5
-#define PS2_CMD 4  // PS2 pin
+#define PS2_CMD 4  // PS2 pin to ESP32 S2 Mini
 #define PS2_SEL 3
 #define PS2_CLK 2
 
@@ -67,12 +67,13 @@ int MAXSPEEDR = 255;  //摇杆控制右边电机速度，最大255
 int MidSpeedL = MAXSPEEDL;
 int MidSpeedR = MAXSPEEDR;
 
-#define pressures false  // 按键模拟值 Key analog value
-#define rumble true      // 手柄震动 Vibration motor
+#define pressures false  // 按键模拟值 Key analog value    false关闭
+#define rumble true      // 手柄震动 Vibration motor       true打开
 int error = 0;
 byte type = 0;
 byte vibrate = 0;
-void (*resetFunc)(void) = 0;  // 重启 reset
+
+void (*resetFunc)(void) = 0;  // PS2重启 reset
 
 void setup() {
   Serial.begin(115200);  // 波特率 Baud rate
